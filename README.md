@@ -31,4 +31,42 @@ A professional batch processing toolkit for medium format film photographers. St
 ### 3. 渲染边框 (Render Borders)
 * **EN**: Drag and drop your images onto `6x6 Medium Format Film Border Tool.bat`. 
 * **CN**: 将图片直接 **拖拽** 到 `6x6 Medium Format Film Border Tool.bat` 脚本图标上。
-* **EN**: If a film stock is unrecognized, a prompt will appear. Simply type a shorthand (e.g., `v50
+* **EN**: If a film stock is unrecognized, a prompt will appear. Simply type a shorthand (e.g., `v50` for Velvia 50) to match.
+* **CN**: 若胶卷型号未被识别，会弹出提示。此时只需输入简称（如输入 `v50` 代表 Velvia 50）即可完成匹配。
+
+---
+
+## 🖼️ 效果预览 (Sample Output)
+
+**EN**: See the transformation from a raw scan to a perfectly rendered border with metadata.  
+**CN**: 预览从原始扫描件到完美渲染的边框效果，并附带元数据信息。
+
+<br>
+
+<p align="center">
+  <img src="https://github.com/hugoxxxx/Photo-Workflow-Scripts/raw/main/sample/before.jpg" width="42%" align="top" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/hugoxxxx/Photo-Workflow-Scripts/raw/main/sample/after.png" width="48.5%" align="top" />
+</p>
+
+<p align="center">
+  <font color="#888">Left: Before (Raw Scan) | Right: After (Metadata & Border)</font>
+</p>
+
+---
+
+## ⚙️ 环境依赖 (Dependencies)
+
+* **ExifTool**: [Download](https://exiftool.org/) and rename the executable to `exiftool.exe`. (需下载并更名为 `exiftool.exe`)
+* **ImageMagick**: [Download](https://imagemagick.org/) and ensure the `magick` command is available in your PATH. (确保安装并使 `magick` 命令全局可用)
+
+---
+
+## 💻 脚本逻辑示例 (Script Logic Snippets)
+
+### Film Stock Standardization | 胶卷库标准化
+```batch
+:: EN: Match shorthand to official film names
+:: CN: 将简称匹配为官方标准名称
+echo !TN! | findstr /I "Portra" | findstr "400" >nul && set "FilmName=KODAK PORTRA 400"
+echo !TN! | findstr /I "Provia" >nul && set "FilmName=FUJI PROVIA 100F"

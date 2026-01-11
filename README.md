@@ -21,59 +21,53 @@ A professional batch processing toolkit for film photographers. Streamline your 
 
 ---
 
-## 🛠️ 脚本说明 | Scripts
-
-| Script Name | Description | Version |
-| :--- | :--- | :--- |
-| `Run_Exif_Inject.bat` | Batch inject EXIF based on JSON | v1.0 |
-| `6x6_Border_Tool.bat` | Add 120/135 borders to single frames | v18.1 |
-| **`Make_Contact_Sheet.bat`** | **Generate clean, balanced film contact sheets** | **v2.6.7** |
-
----
-
-## 🚀 快速使用 | Quick Start
-
-### 1. 准备数据 | Data Preparation
-* **EN**: Export your record from Lightme. **Please rename the exported JSON to `1.json`** and place it in the same folder as your scans.
-* **CN**: 从 Lightme 导出记录。**请务必将导出的 JSON 重命名为 `1.json`** 并存放在扫描件文件夹下。
-
-### 2. 执行注入 | Inject Metadata
-* **EN**: Run `Run_Exif_Inject.bat`. It will match `1.json` entries with your image filenames and update the EXIF data.
-* **CN**: 运行 `Run_Exif_Inject.bat`。脚本会匹配 `1.json` 中的条目与文件名，并更新 EXIF 元数据。
-
-### 3. 全卷预览 | Generate Contact Sheet
-* **EN**: Run `Make_Contact_Sheet.bat`. It will create an elegant off-white contact sheet. Missing metadata (Date/Exposure) will be handled gracefully without showing empty placeholders.
-* **CN**: 运行 `Make_Contact_Sheet.bat`。脚本将生成一张烟白色调的预览大图，并自动隐藏缺失的日期或曝光信息。
-
-### 4. 渲染边框 | Render Borders
-* **EN**: Drag and drop your images onto `6x6_Border_Tool.bat`. If a film stock is unrecognized, simply type a shorthand (e.g., `v50` for Velvia 50) to match.
-* **CN**: 将图片直接 **拖拽** 到 `6x6_Border_Tool.bat` 上。若胶卷未识别，输入简称（如 `v50` 代表 Velvia 50）即可完成匹配。
-
----
-
 ## 🖼️ 效果预览 | Sample Output
 
-**EN**: Mixed orientation contact sheet (v2.6.7) ensures a perfect grid with aligned captions.  
-**CN**: 混合构图预览图 (v2.6.7) 确保网格线与标签文字完美对齐。
-
-<br>
+### 1. 全卷预览印相页 | Film Contact Sheet (v2.6.7)
+**EN**: Balanced grid layout for entire rolls, supporting mixed orientations with auto-aligned captions.  
+**CN**: 整卷底片均衡网格布局，支持横竖构图混排，并确保标注文字整齐对齐。
 
 <p align="center">
-  <img src="https://github.com/hugoxxxx/Photo-Workflow-Scripts/raw/main/sample/before.jpg" width="42%" align="top" />
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/hugoxxxx/Photo-Workflow-Scripts/raw/main/sample/after.png" width="48.5%" align="top" />
+  <img src="https://github.com/hugoxxxx/Photo-Workflow-Scripts/raw/main/sample/contact_sheet_sample.jpg" width="90%" />
 </p>
 
+### 2. 单张边框渲染 | Single Frame Border Rendering
+**EN**: High-quality metadata border with automatic film stock matching.  
+**CN**: 带有胶卷型号自动匹配的高品质元数据边框。
+
 <p align="center">
-  <font color="#888">Left: Raw Scan | Right: Metadata & Border Rendering</font>
+  <img src="https://github.com/hugoxxxx/Photo-Workflow-Scripts/raw/main/sample/after.png" width="60%" />
 </p>
 
 ---
 
-## ⚙️ 环境依赖 | Dependencies
+## 🚀 详细使用方案 | Detailed Usage Guide
 
-* **ExifTool**: [Download](https://exiftool.org/) and rename the executable to `exiftool.exe`. (下载并更名为 `exiftool.exe`)
-* **ImageMagick**: [Download](https://imagemagick.org/) and ensure the `magick` command is available in your PATH. (确保安装并使 `magick` 命令全局可用)
+### 1. 环境准备 | Prerequisites
+* **Install Tools**: Ensure **ExifTool** and **ImageMagick** are installed and added to your system `PATH`.
+    **安装工具**：确保已安装 **ExifTool** 和 **ImageMagick**，并将其路径添加至系统环境变量。
+* **File Naming**: Ensure your scans are named sequentially (e.g., `01.jpg`, `02.jpg`) for the best contact sheet order.
+    **文件命名**：建议将扫描件按顺序命名（如 `01.jpg`），以获得最佳的全卷预览排序。
+
+### 2. 工作流步骤 | Workflow Steps
+
+#### **Step A: Metadata Injection | 第一步：元数据注入**
+* **Scenario**: You have a JSON file from Lightme but your scans have no EXIF.
+    **场景**：你有 Lightme 的记录但扫描件没有 EXIF 信息。
+* **Action**: Place `Run_Exif_Inject.bat` and `1.json` in your image folder, then run the script.
+    **操作**：将脚本和 `1.json` 放入照片文件夹，运行脚本。
+
+#### **Step B: Create Contact Sheet | 第二步：生成全卷预览**
+* **Scenario**: You want a gallery-style index of the entire roll for archiving.
+    **场景**：你需要一张画廊风格的全卷索引页用于归档。
+* **Action**: Run `Make_Contact_Sheet.bat`. The script automatically handles grid size (3x4 to 6x6) based on frame count.
+    **操作**：运行脚本。脚本会根据照片张数自动匹配网格尺寸（从 3x4 到 6x6）。
+
+#### **Step C: Border Rendering | 第三步：边框渲染**
+* **Scenario**: You want to export a single frame for social media with classic film borders.
+    **场景**：你需要导出单张带经典胶卷边框的照片发社交媒体。
+* **Action**: Drag files onto `6x6_Border_Tool.bat`. If unrecognized, type shorthand (e.g., `gold200`) to match.
+    **操作**：将文件拖拽至脚本图标。若未识别，输入简称（如 `gold200`）匹配即可。
 
 ---
 

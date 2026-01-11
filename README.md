@@ -1,2 +1,8 @@
-# Photo-Workflow-Scripts
-Description: 摄影后期元数据处理与工作流自动化工具集（含哈苏 A24 压榨第 13 张、胶片扫描件 EXIF 批量注入等）。//Description (En): A collection of batch scripts for photography workflows.
+# 📸 Photo-Workflow-Scripts | 摄影批处理脚本集
+
+本项目旨在通过简单的批处理和脚本，解决胶片摄影和数码工作流中繁琐的元数据管理问题。
+
+## 🌟 核心功能 (Key Features)
+
+* **Film EXIF Injection**: 批量为 RDP3、Portra 等扫描件注入拍摄参数。
+* **Windows One-Click**: 提供 `.bat` 文件，无需编程基础，双击即用。

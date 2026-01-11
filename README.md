@@ -2,7 +2,7 @@
 
 A professional batch processing toolkit for medium format film photographers. Streamline your workflow from **Lightme** metadata injection to high-quality **border rendering**.
 
-一套专为中画幅胶片摄影师设计的专业批处理工具集。简化从 **Lightme** 测光数据注入到高品质 **边框渲染** 的全流程工作流。
+一套专为中画幅胶片摄影师设计的专业批处理工具集。简化从 **Lightme** 测光数据注入到高品质 **边框渲染** 的全流程工作流。不定期更新轻量的批处理文件。
 
 ---
 
